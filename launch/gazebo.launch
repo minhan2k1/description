@@ -1,0 +1,52 @@
+<launch>
+  <include
+    file="$(find gazebo_ros)/launch/empty_world.launch" />
+  
+  <node
+    name="spawn_model"
+    pkg="gazebo_ros"
+    type="spawn_model"
+    args="-file $(find body_attempt_2)/urdf/body_attempt_2.urdf -urdf -model body_attempt_2 -z 1"
+    output="screen" />
+  
+  <param
+    name="robot_description"
+    textfile="$(find body_attempt_2)/urdf/body_attempt_2.urdf" />
+
+  <node pkg="robot_state_publisher" type="robot_state_publisher"  name="robot_state_publisher">
+    <param name="publish_frequency" type="double" value="60.0" />
+  </node>
+
+  <node
+    name="joint_state_publisher_gui"
+    pkg="joint_state_publisher_gui"
+    type="joint_state_publisher_gui" />
+
+  <node
+    name="rviz"
+    pkg="rviz"
+    type="rviz"
+    />
+
+  <rosparam command="load"
+            file="$(find body_attempt_2)/config/ros_control.yaml"
+            
+            />
+
+  <node name="body_attempt_2_controller_spawner" pkg="controller_manager" type="spawner"
+    respawn="false"  output="screen" ns="/body_attempt_2"
+    args="joint_states_controller
+          frhr_joint_controller
+          frhp_joint_controller
+          frkp_joint_controller
+          rrhr_joint_controller
+          rrhp_joint_controller
+          rrkp_joint_controller
+          flhr_joint_controller
+          flhp_joint_controller
+          flkp_joint_controller
+          rlhr_joint_controller
+          rlhp_joint_controller
+          rlkp_joint_controller
+          --shutdown-timeout 3"/>
+</launch>

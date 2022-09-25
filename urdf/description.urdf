@@ -1,0 +1,870 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="description">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="1.1007E-13 3.7259E-13 -0.080431"
+        rpy="0 0 0" />
+      <mass
+        value="2.5915" />
+      <inertia
+        ixx="0.055662"
+        ixy="9.1624E-16"
+        ixz="1.4189E-08"
+        iyy="0.0075187"
+        iyz="-1.9803E-15"
+        izz="0.060968" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="flhr">
+    <inertial>
+      <origin
+        xyz="-0.082548 0.00099028 -0.0018719"
+        rpy="0 0 0" />
+      <mass
+        value="0.21717" />
+      <inertia
+        ixx="5.4847E-05"
+        ixy="3.0377E-06"
+        ixz="-5.6547E-06"
+        iyy="0.00030803"
+        iyz="6.7836E-08"
+        izz="0.00031237" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/flhr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/flhr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_flhr"
+    type="revolute">
+    <origin
+      xyz="0.0575 -0.19991 -0.115"
+      rpy="1.5708 -0.011996 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="flhr" />
+    <axis
+      xyz="0.99993 -0.011995 0" />
+    <limit
+      lower="-0.5236"
+      upper="0"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <transmission name="flhr_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_flhr">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="flhr_motor">
+      
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="flhp">
+    <inertial>
+      <origin
+        xyz="0.0428558322707208 -0.0331249053482535 0.0533357934919466"
+        rpy="0 0 0" />
+      <mass
+        value="0.693967274657452" />
+      <inertia
+        ixx="0.000902895717440258"
+        ixy="0.000652779600842152"
+        ixz="1.00410610498785E-05"
+        iyy="0.00117563933707649"
+        iyz="-6.69601324817181E-06"
+        izz="0.00185388109239571" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/flhp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/flhp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_flhp"
+    type="revolute">
+    <origin
+      xyz="-0.046391 0.00055652 0.01635"
+      rpy="0 0 0.37416" />
+    <parent
+      link="flhr" />
+    <child
+      link="flhp" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.2217"
+      upper="0"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <transmission name="flhp_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_flhp">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="flhp_motor">
+      
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="flkp">
+    <inertial>
+      <origin
+        xyz="-0.160773614394568 -0.0591694156985878 0.016976555725189"
+        rpy="0 0 0" />
+      <mass
+        value="0.121696114676655" />
+      <inertia
+        ixx="4.82082653677754E-05"
+        ixy="-7.94090394088978E-05"
+        ixz="3.83921485232015E-11"
+        iyy="0.000235726585573093"
+        iyz="-1.14206285827479E-10"
+        izz="0.000269729630366022" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/flkp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/flkp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_flkp"
+    type="revolute">
+    <origin
+      xyz="0.20244 -0.18308 0.026023"
+      rpy="0 0 -0.86585" />
+    <parent
+      link="flhp" />
+    <child
+      link="flkp" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.95993"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <transmission name="flkp_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_flkp">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="flkp_motor">
+      
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="rlhr">
+    <inertial>
+      <origin
+        xyz="-0.0825484394507335 0.000990279527883053 -0.00187185343417275"
+        rpy="0 0 0" />
+      <mass
+        value="0.217171318192734" />
+      <inertia
+        ixx="5.48472556816269E-05"
+        ixy="3.03774782283235E-06"
+        ixz="-5.65470365180462E-06"
+        iyy="0.000308033601074512"
+        iyz="6.78357737576439E-08"
+        izz="0.000312369507182977" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/rlhr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/rlhr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_rlhr"
+    type="revolute">
+    <origin
+      xyz="0.0575 0.19991 -0.115"
+      rpy="-1.5708 0.011996 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="rlhr" />
+    <axis
+      xyz="0.99993 -0.011995 0" />
+    <limit
+      lower="-0.17453"
+      upper="0.5236"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <transmission name="rlhr_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_rlhr">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rlhr_motor">
+      
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="rlhp">
+    <inertial>
+      <origin
+        xyz="0.0428558322707217 -0.0331249053482502 0.0533357934919466"
+        rpy="0 0 0" />
+      <mass
+        value="0.693967274657452" />
+      <inertia
+        ixx="0.000902895717440256"
+        ixy="0.000652779600842151"
+        ixz="1.0041061049878E-05"
+        iyy="0.00117563933707649"
+        iyz="-6.69601324817142E-06"
+        izz="0.00185388109239571" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/rlhp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/rlhp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_rlhp"
+    type="revolute">
+    <origin
+      xyz="-0.046391 0.00055652 0.01635"
+      rpy="0 0 -3.0292" />
+    <parent
+      link="rlhr" />
+    <child
+      link="rlhp" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.95993"
+      upper="0"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <transmission name="rlhp_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_rlhp">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rlhp_motor">
+      
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="rlkp">
+    <inertial>
+      <origin
+        xyz="-0.160773568052752 -0.0591693852667058 0.0169765539878554"
+        rpy="0 0 0" />
+      <mass
+        value="0.121696082641449" />
+      <inertia
+        ixx="4.82083044827708E-05"
+        ixy="-7.94089275911074E-05"
+        ixz="3.81105199576272E-11"
+        iyy="0.000235726631854796"
+        iyz="-1.28918612369862E-10"
+        izz="0.000269729590228258" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/rlkp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/rlkp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_rlkp"
+    type="revolute">
+    <origin
+      xyz="0.20244 -0.18308 0.026023"
+      rpy="0 0 -0.86585" />
+    <parent
+      link="rlhp" />
+    <child
+      link="rlkp" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.95993"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <transmission name="rlkp_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_rlkp">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rlkp_motor">
+      
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="frhr">
+    <inertial>
+      <origin
+        xyz="-0.0825484394507336 0.00099027952788304 -0.00187185343417302"
+        rpy="0 0 0" />
+      <mass
+        value="0.217171318192734" />
+      <inertia
+        ixx="5.48472556816269E-05"
+        ixy="3.03774782283419E-06"
+        ixz="-5.6547036518046E-06"
+        iyy="0.000308033601074511"
+        iyz="6.78357737576904E-08"
+        izz="0.000312369507182977" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/frhr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/frhr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_frhr"
+    type="revolute">
+    <origin
+      xyz="-0.0575 -0.19991 -0.115"
+      rpy="-1.5708 0.011996 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="frhr" />
+    <axis
+      xyz="0.99993 -0.011995 0" />
+    <limit
+      lower="0"
+      upper="0.5236"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <transmission name="frhr_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_frhr">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="frhr_motor">
+      
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="frhp">
+    <inertial>
+      <origin
+        xyz="0.0474433086620266 -0.0259416128651269 -0.053369363105334"
+        rpy="0 0 0" />
+      <mass
+        value="0.693181876494053" />
+      <inertia
+        ixx="0.000707063443052804"
+        ixy="0.000578045611097527"
+        ixz="-1.09657688336643E-05"
+        iyy="0.00136908932505153"
+        iyz="5.0409735481957E-06"
+        izz="0.00185150207847565" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/frhp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/frhp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_frhp"
+    type="revolute">
+    <origin
+      xyz="-0.0463906138488967 0.000556517791082928 0.0163500000000001"
+      rpy="3.14159265358979 0 -0.240900104116896" />
+    <parent
+      link="frhr" />
+    <child
+      link="frhp" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.2217"
+      upper="0"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <transmission name="frhp_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_frhp">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="frhp_motor">
+      
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="frkp">
+    <inertial>
+      <origin
+        xyz="-0.142429101190215 -0.0952004515417478 -0.0169765199030201"
+        rpy="0 0 0" />
+      <mass
+        value="0.121696114676655" />
+      <inertia
+        ixx="9.4691653489718E-05"
+        ixy="-0.000113408893066758"
+        ixz="6.40883130688407E-11"
+        iyy="0.000189243197451151"
+        iyz="-1.02028039849044E-10"
+        izz="0.000269729630366022" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/frkp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/frkp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_frkp"
+    type="revolute">
+    <origin
+      xyz="0.228613023629153 -0.14911768985314 -0.0260234621858964"
+      rpy="0 0 -0.945160157856503" />
+    <parent
+      link="frhp" />
+    <child
+      link="frkp" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.95993"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <transmission name="frkp_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_frkp">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="frkp_motor">
+      
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="rrhr">
+    <inertial>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <mass
+        value="0" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/rrhr.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/rrhr.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_rrhr"
+    type="revolute">
+    <origin
+      xyz="-0.0575000000003378 0.199906048182289 -0.114999999999853"
+      rpy="1.5707963267949 -0.011995769200627 -1.5707963267949" />
+    <parent
+      link="base_link" />
+    <child
+      link="rrhr" />
+    <axis
+      xyz="0.999928051623421 -0.011995481507206 0" />
+    <limit
+      lower="-0.17453"
+      upper="0.5236"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <transmission name="rrhr_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_rrhr">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rrhr_motor">
+      
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="rrhp">
+    <inertial>
+      <origin
+        xyz="0.0474433086620269 -0.0259416128651234 -0.053369363105334"
+        rpy="0 0 0" />
+      <mass
+        value="0.693181876494053" />
+      <inertia
+        ixx="0.000707063443052803"
+        ixy="0.000578045611097526"
+        ixz="-1.09657688336655E-05"
+        iyy="0.00136908932505154"
+        iyz="5.04097354819631E-06"
+        izz="0.00185150207847565" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/rrhp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/rrhp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_rrhp"
+    type="revolute">
+    <origin
+      xyz="-0.0463906138488967 0.000556517791083372 0.0163499999999992"
+      rpy="3.14159265358979 0 -3.12069336990756" />
+    <parent
+      link="rrhr" />
+    <child
+      link="rrhp" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.95993"
+      upper="0"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <transmission name="rrhp_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_rrhp">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rrhp_motor">
+      
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+  <link
+    name="rrkp">
+    <inertial>
+      <origin
+        xyz="-0.160773568052752 -0.0591693852667053 -0.0169765216403541"
+        rpy="0 0 0" />
+      <mass
+        value="0.121696082641449" />
+      <inertia
+        ixx="4.8208304482771E-05"
+        ixy="-7.94089275911079E-05"
+        ixz="3.81105198916836E-11"
+        iyy="0.000235726631854796"
+        iyz="-1.2891861239338E-10"
+        izz="0.000269729590228259" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/rrkp.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://description/meshes/rrkp.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="j_rrkp"
+    type="revolute">
+    <origin
+      xyz="0.228613023629153 -0.149117689853136 -0.0260234621858964"
+      rpy="0 0 -0.708599928565525" />
+    <parent
+      link="rrhp" />
+    <child
+      link="rrkp" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="0"
+      upper="0.95993"
+      effort="100"
+      velocity="100" />
+  </joint>
+  <transmission name="rrkp_tran">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="j_rrkp">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="rrkp_motor">
+      
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/body_attempt_2</robotNamespace>
+    </plugin>
+  </gazebo>
+  
+</robot>
